@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
+import plotly.express as px
 
 
 # Создаем массив x с шагом 0.01
@@ -35,5 +36,11 @@ def sb_function(x, y):
     plt.ylabel('y')
     plt.show()
 
-
 sb_function(xarr, yarr)
+
+def plotly_function(x, y):
+
+    fig = px.line(x=x, y=y, title="y(x) = cos(20x) / (x + 0.1)")
+    fig.show()
+
+plotly_function(xarr, yarr)
